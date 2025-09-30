@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Brain, MessageSquare, Gift, Plug, Shield } from 'lucide-react'
+import { Brain, MessageSquare, Gift } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Section } from './ui/Section'
 import { Card } from './ui/Card'
@@ -80,57 +80,6 @@ const highlights = [
             <span>Profile shared</span>
             <span className="text-blue-600">+50 pts</span>
           </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    icon: Plug,
-    title: 'ATS & Slack integration',
-    description: 'Sync to Greenhouse/Lever; notify in Slack/Teams.',
-    details: 'Seamless integration with your existing tools and workflows.',
-    mockup: (
-      <div className="space-y-2">
-        <div className="flex items-center space-x-2 text-xs">
-          <div className="w-4 h-4 bg-green-500 rounded"></div>
-          <span>Greenhouse</span>
-          <Badge size="sm" variant="success">Connected</Badge>
-        </div>
-        <div className="flex items-center space-x-2 text-xs">
-          <div className="w-4 h-4 bg-purple-500 rounded"></div>
-          <span>Slack</span>
-          <Badge size="sm" variant="success">Connected</Badge>
-        </div>
-        <div className="flex items-center space-x-2 text-xs">
-          <div className="w-4 h-4 bg-blue-500 rounded"></div>
-          <span>Teams</span>
-          <Badge size="sm" variant="default">Available</Badge>
-        </div>
-      </div>
-    )
-  },
-  {
-    icon: Shield,
-    title: 'Compliance & privacy',
-    description: 'Opt-in, revocation, data minimization, audit logs.',
-    details: 'Enterprise-grade privacy controls with full transparency and employee consent management.',
-    mockup: (
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-xs">
-          <span>Data Retention</span>
-          <span className="text-green-600">30 days</span>
-        </div>
-        <div className="flex items-center justify-between text-xs">
-          <span>Employee Consent</span>
-          <span className="text-green-600">Required</span>
-        </div>
-        <div className="flex items-center justify-between text-xs">
-          <span>Audit Logs</span>
-          <span className="text-green-600">Enabled</span>
-        </div>
-        <div className="flex items-center justify-between text-xs">
-          <span>GDPR Compliant</span>
-          <span className="text-green-600">✓</span>
         </div>
       </div>
     )
@@ -219,7 +168,7 @@ export function ProductHighlights() {
                 Higher retention rates
               </h3>
               <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-                80% faster sourcing, 60% savings on hiring costs, +400% more referral hires
+                Employees hired through referrals stay 45% longer on average
               </p>
             </div>
           </div>

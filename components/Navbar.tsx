@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { Button } from './ui/Button'
 import { Container } from './ui/Container'
+import { Logo } from './Logo'
 import { cn } from '@/lib/utils'
 
 const navigation = [
   { name: 'Product', href: '#product' },
   { name: 'How it works', href: '#how-it-works' },
   { name: 'Security', href: '#security' },
-  { name: 'Pricing', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
 ]
 
@@ -47,8 +47,7 @@ export function Navbar() {
   }
 
   const handleBookDemo = () => {
-    // This will be connected to the modal later
-    console.log('Book demo clicked')
+    window.open('https://calendly.com/samuel-netterai/30min', '_blank')
   }
 
   return (
@@ -61,11 +60,11 @@ export function Navbar() {
       )}
     >
       <Container>
-        <nav className="flex items-center justify-between py-4 lg:py-6">
+        <nav className="flex items-center justify-between py-3 lg:py-5">
           {/* Logo */}
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-bold text-primary-600">Netter</span>
+            <a href="#" className="-m-2 p-2 flex items-center">
+              <Logo size="md" />
             </a>
           </div>
 
@@ -116,7 +115,7 @@ export function Navbar() {
             <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-neutral-950 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-neutral-900/10 dark:sm:ring-neutral-100/10">
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
-                  <span className="text-2xl font-bold text-primary-600">Netter</span>
+                  <Logo size="md" />
                 </a>
                 <button
                   type="button"

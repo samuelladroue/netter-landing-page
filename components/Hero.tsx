@@ -4,11 +4,12 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Play } from 'lucide-react'
 import { Button } from './ui/Button'
 import { Container } from './ui/Container'
+import { Logo } from './Logo'
 import { ProductPreview } from './ProductPreview'
 
 export function Hero() {
   const handleBookDemo = () => {
-    console.log('Book demo clicked')
+    window.open('https://calendly.com/samuel-netterai/30min', '_blank')
   }
 
   const handleSeeHowItWorks = () => {

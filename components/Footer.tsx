@@ -1,6 +1,7 @@
 'use client'
 
 import { Container } from './ui/Container'
+import { Logo } from './Logo'
 
 const navigation = {
   product: [
@@ -36,8 +37,8 @@ export function Footer() {
           <div className="grid gap-8 lg:grid-cols-5">
             {/* Logo and description */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
-                <span className="text-2xl font-bold text-white">Netter</span>
+              <div className="mb-4">
+                <Logo variant="white" size="lg" />
               </div>
               <p className="text-neutral-400 max-w-md">
                 Automate hiring through employee referrals. Transform your team's network 

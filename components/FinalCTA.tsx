@@ -8,7 +8,7 @@ import { Button } from './ui/Button'
 
 export function FinalCTA() {
   const handleBookDemo = () => {
-    console.log('Book demo clicked')
+    window.open('https://calendly.com/samuel-netterai/30min', '_blank')
   }
 
   return (

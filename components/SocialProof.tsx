@@ -2,40 +2,33 @@
 
 import { motion } from 'framer-motion'
 import { Star, Quote } from 'lucide-react'
+import Image from 'next/image'
 import { Container } from './ui/Container'
 import { Section } from './ui/Section'
 import { Card } from './ui/Card'
 
-// Placeholder company logos (using CSS shapes for now)
+// Real company logos - updated
 const companies = [
-  { name: 'TechCorp', color: 'bg-blue-500' },
-  { name: 'InnovateLabs', color: 'bg-green-500' },
-  { name: 'DataFlow', color: 'bg-purple-500' },
-  { name: 'CloudScale', color: 'bg-orange-500' },
-  { name: 'DevTools', color: 'bg-red-500' },
-  { name: 'AIStartup', color: 'bg-indigo-500' }
+  { name: 'Alan', logo: '/logo Alan.png' },
+  { name: 'Riot Games', logo: '/logo riot.png' },
+  { name: 'IDA', logo: '/logo ida.png' },
+  { name: 'EY', logo: '/logo EY.png' },
+  { name: 'Oliverlist', logo: '/logo oliverlist.png' }
 ]
 
 const testimonials = [
   {
-    quote: "Netter cut our time-to-hire from 8 weeks to 3 weeks. The warm introductions from our team made all the difference in attracting top talent.",
-    author: "Sarah Johnson",
-    role: "VP of Engineering",
-    company: "TechCorp",
+    quote: "We truly needed this software and it would be hard for us to continue without it. We went from 12% to 38% referrals among hires in only one month",
+    author: "Maxime Lebras",
+    role: "Talent Lead at Alan",
+    company: "700+ employees",
     rating: 5
   },
   {
-    quote: "We've seen a 5x increase in candidate response rates since implementing Netter. Our employees love being part of the hiring process.",
-    author: "Michael Chen",
-    role: "Head of Talent",
-    company: "InnovateLabs", 
-    rating: 5
-  },
-  {
-    quote: "The ML matching is incredibly accurate. We're finding candidates we never would have discovered through traditional sourcing methods.",
-    author: "Emily Rodriguez",
-    role: "Talent Acquisition Lead",
-    company: "DataFlow",
+    quote: "I'd been thinking about a tool like Netter for months, as I struggled to leverage referrals despite offering a €3,000 referral bonus. Now everything is super smooth",
+    author: "Benjamin Netter",
+    role: "CEO at Riot",
+    company: "100+ employees",
     rating: 5
   }
 ]
@@ -55,7 +48,7 @@ export function SocialProof() {
           <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400 mb-8">
             Trusted by innovative companies
           </p>
-          <div className="grid grid-cols-3 gap-8 sm:grid-cols-6 items-center justify-items-center">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-5 items-center justify-items-center">
             {companies.map((company, index) => (
               <motion.div
                 key={company.name}
@@ -65,8 +58,15 @@ export function SocialProof() {
                 viewport={{ once: true }}
                 className="flex items-center justify-center"
               >
-                {/* Placeholder logo using colored rectangle */}
-                <div className={`w-16 h-8 ${company.color} rounded opacity-60 hover:opacity-80 transition-opacity`} />
+                <div className="relative w-24 h-12 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+                  <Image
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 96px, 96px"
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -89,7 +89,7 @@ export function SocialProof() {
             </p>
           </motion.div>
 
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.author}
@@ -112,18 +112,18 @@ export function SocialProof() {
                     "{testimonial.quote}"
                   </blockquote>
                   
-                  <div className="mt-auto">
+                  <div className="mt-6 pt-4 border-t border-neutral-200 dark:border-neutral-700">
                     <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center mr-3">
-                        <span className="text-white font-medium text-sm">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center mr-4">
+                        <span className="text-white font-medium text-base">
                           {testimonial.author.split(' ').map(n => n[0]).join('')}
                         </span>
                       </div>
-                      <div>
-                        <div className="font-medium text-neutral-900 dark:text-neutral-100">
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-neutral-900 dark:text-neutral-100 leading-tight">
                           {testimonial.author}
                         </div>
-                        <div className="text-sm text-neutral-600 dark:text-neutral-400">
+                        <div className="text-sm text-neutral-600 dark:text-neutral-400 mt-1 leading-relaxed">
                           {testimonial.role}, {testimonial.company}
                         </div>
                       </div>

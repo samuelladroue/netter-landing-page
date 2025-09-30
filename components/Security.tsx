@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Shield, Lock, FileText, Users, CheckCircle, ExternalLink } from 'lucide-react'
+import { Shield, Lock, FileText, Users, CheckCircle } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Section } from './ui/Section'
 import { Card } from './ui/Card'
@@ -12,7 +12,7 @@ const securityFeatures = [
     icon: Shield,
     title: 'SOC 2 Compliance',
     description: 'Enterprise-grade security controls and regular audits',
-    status: 'roadmap'
+    status: 'active'
   },
   {
     icon: Lock,
@@ -34,11 +34,6 @@ const securityFeatures = [
   }
 ]
 
-const complianceLinks = [
-  { name: 'Privacy Policy', href: '#privacy' },
-  { name: 'Data Processing Agreement', href: '#dpa' },
-  { name: 'Security Overview', href: '#security' }
-]
 
 export function Security() {
   return (
@@ -80,10 +75,8 @@ export function Security() {
                   <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     {feature.title}
                   </h3>
-                  {feature.status === 'active' ? (
-                    <CheckCircle className="h-4 w-4 text-green-500" />
-                  ) : (
-                    <Badge variant="warning" size="sm">Roadmap</Badge>
+                  {feature.status === 'active' && (
+                    <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                   )}
                 </div>
                 
@@ -172,30 +165,6 @@ export function Security() {
           </Card>
         </motion.div>
 
-        {/* Compliance links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
-            Learn more about our security and privacy practices
-          </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            {complianceLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="inline-flex items-center space-x-1 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors"
-              >
-                <span>{link.name}</span>
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            ))}
-          </div>
-        </motion.div>
       </Container>
     </Section>
   )

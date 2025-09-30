@@ -7,7 +7,7 @@ import { HowItWorks } from '@/components/HowItWorks'
 import { ProductHighlights } from '@/components/ProductHighlights'
 import { Security } from '@/components/Security'
 import { SocialProof } from '@/components/SocialProof'
-import { Pricing } from '@/components/Pricing'
+import { CallToAction } from '@/components/CallToAction'
 import { FAQ } from '@/components/FAQ'
 import { FinalCTA } from '@/components/FinalCTA'
 import { Footer } from '@/components/Footer'
@@ -20,9 +20,9 @@ export default function Home() {
       <ProblemPromise />
       <HowItWorks />
       <ProductHighlights />
-      <Security />
       <SocialProof />
-      <Pricing />
+      <Security />
+      <CallToAction />
       <FAQ />
       <FinalCTA />
       <Footer />

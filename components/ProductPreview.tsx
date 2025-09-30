@@ -47,8 +47,8 @@ export function ProductPreview() {
       >
         <Card className="p-6 shadow-2xl">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6">
-            <div>
+          <div className="flex items-start justify-between mb-6 relative">
+            <div className="flex-1 pr-20">
               <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                 Senior Frontend Engineer
               </h3>
@@ -56,7 +56,9 @@ export function ProductPreview() {
                 3 candidates from your network
               </p>
             </div>
-            <Badge variant="primary">Active</Badge>
+            <div className="absolute top-0 right-0">
+              <Badge variant="primary" className="px-3 py-1">Active</Badge>
+            </div>
           </div>
 
           {/* Candidates list */}
@@ -124,12 +126,12 @@ export function ProductPreview() {
 
       {/* Floating connection indicators */}
       <motion.div
-        className="absolute -top-4 -right-4 w-16 h-16 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center"
+        className="absolute -top-6 -right-6 w-14 h-14 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, delay: 0.5 }}
       >
-        <Users className="w-6 h-6 text-primary-600" />
+        <Users className="w-5 h-5 text-primary-600" />
       </motion.div>
 
       <motion.div

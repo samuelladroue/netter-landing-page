@@ -5,6 +5,7 @@ import { Network, Target, Zap, ArrowRight } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Section } from './ui/Section'
 import { Card } from './ui/Card'
+import { Mascot } from './Mascot'
 
 const steps = [
   {
@@ -102,9 +103,12 @@ export function HowItWorks() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
-              How Netter works
-            </h2>
+            <div className="flex items-center justify-center space-x-4 mb-4">
+              <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
+                How Netter works
+              </h2>
+              <Mascot size="md" />
+            </div>
             <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
               Three simple steps to transform your hiring process
             </p>
@@ -129,14 +133,10 @@ export function HowItWorks() {
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30">
                         <step.icon className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                       </div>
-                      <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">
-                        {step.number}
-                      </div>
+                      <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+                        {step.number} - {step.title}
+                      </h3>
                     </div>
-                    
-                    <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-                      {step.title}
-                    </h3>
                     
                     <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-4">
                       {step.details}
@@ -160,8 +160,12 @@ export function HowItWorks() {
 
                 {/* Arrow connector (except for last item) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:flex justify-center mt-12">
-                    <ArrowRight className="h-6 w-6 text-neutral-400 dark:text-neutral-600" />
+                  <div className="flex justify-center mt-8 mb-4">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-px bg-neutral-300 dark:bg-neutral-600"></div>
+                      <ArrowRight className="h-5 w-5 text-primary-500 dark:text-primary-400" />
+                      <div className="w-8 h-px bg-neutral-300 dark:bg-neutral-600"></div>
+                    </div>
                   </div>
                 )}
               </motion.div>
