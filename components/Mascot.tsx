@@ -31,7 +31,10 @@ export function Mascot({ className, size = 'lg', animate = true }: MascotProps) 
         onError={(e) => {
           // Fallback to emoji if image fails to load
           e.currentTarget.style.display = 'none';
-          e.currentTarget.nextElementSibling.style.display = 'block';
+          const fallbackElement = e.currentTarget.nextElementSibling as HTMLElement | null;
+          if (fallbackElement) {
+            fallbackElement.style.display = 'block';
+          }
         }}
       />
       {/* Fallback emoji (hidden by default) */}
