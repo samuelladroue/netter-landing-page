@@ -17,10 +17,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <SocialProof />
       <ProblemPromise />
       <HowItWorks />
       <ProductHighlights />
-      <SocialProof />
       <Security />
       <CallToAction />
       <FAQ />

@@ -12,7 +12,6 @@ const companies = [
   { name: 'Alan', logo: '/logo Alan.png' },
   { name: 'Riot Games', logo: '/logo riot.png' },
   { name: 'IDA', logo: '/logo ida.png' },
-  { name: 'EY', logo: '/logo EY.png' },
   { name: 'Oliverlist', logo: '/logo oliverlist.png' }
 ]
 
@@ -45,10 +44,10 @@ export function SocialProof() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400 mb-8">
-            Trusted by innovative companies
-          </p>
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-5 items-center justify-items-center">
+          <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl mb-8">
+            Trusted by the most innovative tech companies
+          </h2>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 items-center justify-items-center">
             {companies.map((company, index) => (
               <motion.div
                 key={company.name}
